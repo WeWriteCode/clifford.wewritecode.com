@@ -1,4 +1,4 @@
-# rye.tyriker.com
+# clifford.wewritecode.com
 
 This project is the setup and configuration for running open-webui on a personal server.
 
