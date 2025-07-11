@@ -28,6 +28,10 @@ echo "Install OpenAI-Edge-TTS"
 ./install-openai-edge-tts.sh
 
 echo "clean up"
+sudo -u ec2-user -i <<EOF
+uv cache prune
+EOF
+
 #dnf remove cargo rust -y
 dnf groupremove "Development Tools" -y
 dnf clean all
