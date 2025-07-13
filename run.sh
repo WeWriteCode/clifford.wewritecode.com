@@ -10,6 +10,7 @@ echo "Update system"
 dnf update
 dnf upgrade --releasever=2023.7.20250331 -y
 dnf groupinstall "Development Tools" -y
+dnf install sqlite-devel -y
 #dnf install rust cargo -y
 
 # Switch to ec2-user and perform installation of UV
