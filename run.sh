@@ -6,11 +6,17 @@ if [ "$(id -u)" -ne 0 ]; then
   exit 1
 fi
 
+if [ ! -f open-webui.env ]; then
+  echo "open-webui.env file is missing. Copy open-webui-default.env to open-webui.env and adjust as necessary."
+  exit 1
+fi
+
 echo "Update system"
 dnf update
 dnf upgrade --releasever=2023.8.20250707 -y
 dnf groupinstall "Development Tools" -y
 dnf install sqlite-devel -y
+dnf install python3-devel -y
 #dnf install rust cargo -y
 
 # Switch to ec2-user and perform installation of UV
@@ -34,7 +40,7 @@ uv cache prune
 EOF
 
 #dnf remove cargo rust -y
-dnf groupremove "Development Tools" -y
+#dnf groupremove "Development Tools" -y
 dnf clean all
 
 exit 0
