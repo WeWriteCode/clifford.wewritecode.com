@@ -4,7 +4,9 @@ current_dir=$(pwd)
 
 #switch to ec2-user and perform installation of openai-edge-tts
 sudo -u ec2-user -i <<EOF
-git clone https://github.com/travisvn/openai-edge-tts.git
+if [ ! -d "openai-edge-tts" ]; then
+    git clone https://github.com/travisvn/openai-edge-tts.git
+fi
 cd openai-edge-tts
 
 cp .env.example .env
