@@ -13,7 +13,7 @@ fi
 
 echo "Update system"
 dnf update
-dnf upgrade --releasever=2023.8.20250707 -y
+dnf upgrade --releasever=2023.8.20250804 -y
 dnf groupinstall "Development Tools" -y
 dnf install sqlite-devel -y
 dnf install python3-devel -y
