@@ -25,9 +25,13 @@ fi
 cd "$current_dir"
 
 cp open-webui.service /usr/lib/systemd/system/open-webui.service
+cp open-webui_restart_timer.timer /usr/lib/systemd/system/open-webui_restart_timer.timer
 
 systemctl daemon-reload
 systemctl enable open-webui.service
 systemctl start open-webui.service
+systemctl enable open-webui_restart_timer.timer
+systemctl start open-webui_restart_timer.timer
+
 
 exit 0

@@ -1,0 +1,9 @@
+[Unit]
+Description=Timer to restart Open WebUI
+
+[Timer]
+OnCalendar=*-*-* 08:30:00
+Unit=open-webui.service
+
+[Install]
+WantedBy=timers.target
