@@ -6,6 +6,7 @@ After=network.target
 Type=simple
 WorkingDirectory=/home/ec2-user
 EnvironmentFile=/home/ec2-user/open-webui.env
+ExecStartPre=/home/ec2-user/.local/bin/uv run --with psycopg2-binary --with python-dotenv database_connection_setup.py
 ExecStart=/home/ec2-user/.local/bin/uvx --python 3.11 open-webui@latest serve
 ExecStop=/bin/kill -HUP $MAINPID
 Restart=always
