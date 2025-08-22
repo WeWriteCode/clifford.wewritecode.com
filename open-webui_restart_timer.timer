@@ -3,6 +3,7 @@ Description=Timer to restart Open WebUI
 
 [Timer]
 OnCalendar=*-*-* 08:30:00
+Persistent=true
 Unit=open-webui.service
 
 [Install]
